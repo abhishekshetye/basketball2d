@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BallTouch.cs" />
+     <Compile Include="Assets\Scripts\MoveCamera.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Volumes/Untitled/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BallTouch.cs">
     <Files>
-      <File FileName="Assets/Scripts/BallTouch.cs" Line="26" Column="3" />
+      <File FileName="Assets/Scripts/BallTouch.cs" Line="56" Column="96" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
