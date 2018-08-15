@@ -33,7 +33,7 @@ public class BallTouch : MonoBehaviour {
 
 		//Instantiate(player, new Vector3(-5.69F, 0.87f, 26.3f), Quaternion.identity);
 
-		Time.timeScale = 1.3f;
+		Time.timeScale = 1.5f;
 
 		scoreText.text = "Score : " + score;
 
@@ -77,6 +77,8 @@ public class BallTouch : MonoBehaviour {
 			//forceVector = forceVector.normalized * 720f;
 
 			forceVector = forceVector.normalized * 690f;
+
+			//forceVector = forceVector.normalized * 500f; //Easy
 
 			Debug.Log ("Magnitude is " + forceVector.magnitude);
 

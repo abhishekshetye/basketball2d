@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ScoreWall
   - DangerWall
+  - Music
   layers:
   - Default
   - TransparentFX
