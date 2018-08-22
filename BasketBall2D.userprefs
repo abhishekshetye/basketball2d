@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MySceneManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BallTouch.cs">
     <Files>
-      <File FileName="Assets/MySceneManager.cs" Line="10" Column="2" />
-      <File FileName="Assets/Scripts/BallTouch.cs" Line="36" Column="23" />
-      <File FileName="Assets/LevelDecider.cs" Line="34" Column="28" />
-      <File FileName="Assets/LevelSetter.cs" Line="11" Column="17" />
-      <File FileName="Assets/Scripts/MoveCamera.cs" Line="21" Column="20" />
+      <File FileName="Assets/Scripts/MySceneManager.cs" Line="38" Column="37" />
+      <File FileName="Assets/Scripts/BallTouch.cs" Line="344" Column="31" />
+      <File FileName="Assets/Scripts/MoveCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MusicManager.cs" Line="21" Column="23" />
+      <File FileName="Assets/Scripts/LevelDecider.cs" Line="21" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

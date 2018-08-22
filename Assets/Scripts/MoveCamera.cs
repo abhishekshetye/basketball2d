@@ -12,7 +12,7 @@ public class MoveCamera : MonoBehaviour {
 		Debug.Log ("Came positions " + PlayerPrefs.GetFloat("CameX") + " " + PlayerPrefs.GetFloat("CameY"));
 		this.transform.position = new Vector3 (PlayerPrefs.GetFloat("CameX"), PlayerPrefs.GetFloat("CameY"), -10f);
 		player.transform.position = new Vector3 (PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"), 0.53f);
-		PlayerPrefs.DeleteAll ();
+		//PlayerPrefs.DeleteAll ();
 
 		offset = transform.position - player.transform.position;
 		Debug.Log ("Offset is " + offset);

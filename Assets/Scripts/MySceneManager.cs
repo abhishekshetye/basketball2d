@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Advertisements;
 
 public class MySceneManager : MonoBehaviour {
 
@@ -20,6 +21,10 @@ public class MySceneManager : MonoBehaviour {
 
 	public GameObject player;
 
+	public GameObject feedbackPanel;
+
+	public string fbUrl;
+
 	private Rigidbody2D rigidBody;
 
 	private Vector3 forceVector;
@@ -32,9 +37,55 @@ public class MySceneManager : MonoBehaviour {
 		//music init
 		InitMusic();
 
+		//Feedback
+		TriggerFeedback();
+
+		Advertisement.Initialize ("2753861");
+
 		StartCoroutine(WaitAndJump ());
 	}
 
+
+	private void TriggerFeedback(){
+
+		//increment number of time game was opened
+		int gameOpened = PlayerPrefs.GetInt("GameOpened", 0);
+		gameOpened++;
+		PlayerPrefs.SetInt ("GameOpened", gameOpened);
+
+		if (gameOpened == 4 && PlayerPrefs.GetInt ("Feedback", 0) == 0) {
+			feedbackPanel.SetActive (true);
+		}
+
+	}
+
+	public void showFeedbackPanel(){
+		feedbackPanel.SetActive (true);
+	}
+
+	public void FeedbackButtonPressed(){
+
+		PlayerPrefs.SetInt ("Feedback", 1);
+		feedbackPanel.SetActive (false);
+		string email = "thecodebreakergames@gmail.com";
+		string subject = MyEscapeURL("Feedback for Cave Hopper");
+		string body = MyEscapeURL("Feel free to drop compliments/complaints/things you would like to change/even things you find annoying in the game!");
+		Application.OpenURL("mailto:" + email + "?subject=" + subject + "&body=" + body);
+
+	}
+
+	string MyEscapeURL (string url)
+	{
+		return WWW.EscapeURL(url).Replace("+","%20");
+	}
+
+	void Update()
+	{
+
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.Quit ();
+		}
+	}
 
 	private void InitMusic(){
 	
@@ -44,7 +95,8 @@ public class MySceneManager : MonoBehaviour {
 
 		if (musicOn == 0) {
 			//music should play
-			musicManager.PlayMusic();
+			if(!musicManager.isPlaying())
+				musicManager.PlayMusic();
 			soundButtonImage.sprite = musicOffSprite;
 		} else {
 			//music shouldn't play
@@ -103,8 +155,14 @@ public class MySceneManager : MonoBehaviour {
 			PlayerPrefs.SetInt ("Music", 1);
 			soundButtonImage.sprite = musicOnSprite;
 		}
+	}
 
 
+	public void OpenFacebookUrl(){
+		Application.OpenURL(fbUrl);
+	}
 
+	public void OpenPlayStoreUrl(){
+		Application.OpenURL("https://play.google.com/store/apps/developer?id=Abhishek+Shetye&hl=en_US");
 	}
 }
